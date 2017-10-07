@@ -8,20 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		772DBC691F89778D0099558C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC681F89778D0099558C /* AppDelegate.swift */; };
-		772DBC6B1F89778D0099558C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC6A1F89778D0099558C /* ViewController.swift */; };
+		772DBC6B1F89778D0099558C /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC6A1F89778D0099558C /* TalkVC.swift */; };
 		772DBC6E1F89778D0099558C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772DBC6C1F89778D0099558C /* Main.storyboard */; };
 		772DBC701F89778D0099558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772DBC6F1F89778D0099558C /* Assets.xcassets */; };
 		772DBC731F89778D0099558C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772DBC711F89778D0099558C /* LaunchScreen.storyboard */; };
+		772DBC881F8998D90099558C /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC871F8998D90099558C /* Credentials.swift */; };
+		772DBC8C1F89A0E70099558C /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC811F897AC60099558C /* RestKit.framework */; };
+		772DBC8D1F89A0F20099558C /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC7B1F897A970099558C /* TextToSpeechV1.framework */; };
+		772DBC8E1F89A0F50099558C /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC7D1F897AA30099558C /* SpeechToTextV1.framework */; };
+		772DBC8F1F89A0FB0099558C /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC7F1F897ABB0099558C /* PersonalityInsightsV3.framework */; };
+		772DBC901F89A10A0099558C /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC851F89970F0099558C /* ToneAnalyzerV3.framework */; };
+		772DBC921F89A1230099558C /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC911F89A1230099558C /* NaturalLanguageClassifierV1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		772DBC651F89778D0099558C /* Watson-Tomorrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watson-Tomorrow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DBC681F89778D0099558C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		772DBC6A1F89778D0099558C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		772DBC6A1F89778D0099558C /* TalkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkVC.swift; sourceTree = "<group>"; };
 		772DBC6D1F89778D0099558C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		772DBC6F1F89778D0099558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772DBC721F89778D0099558C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772DBC741F89778D0099558C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		772DBC7B1F897A970099558C /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
+		772DBC7D1F897AA30099558C /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechToTextV1.framework; path = Carthage/Build/iOS/SpeechToTextV1.framework; sourceTree = "<group>"; };
+		772DBC7F1F897ABB0099558C /* PersonalityInsightsV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PersonalityInsightsV3.framework; path = Carthage/Build/iOS/PersonalityInsightsV3.framework; sourceTree = "<group>"; };
+		772DBC811F897AC60099558C /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		772DBC831F897BF20099558C /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConversationV1.framework; path = Carthage/Build/iOS/ConversationV1.framework; sourceTree = "<group>"; };
+		772DBC851F89970F0099558C /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToneAnalyzerV3.framework; path = Carthage/Build/iOS/ToneAnalyzerV3.framework; sourceTree = "<group>"; };
+		772DBC871F8998D90099558C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		772DBC911F89A1230099558C /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772DBC8C1F89A0E70099558C /* RestKit.framework in Frameworks */,
+				772DBC8D1F89A0F20099558C /* TextToSpeechV1.framework in Frameworks */,
+				772DBC8E1F89A0F50099558C /* SpeechToTextV1.framework in Frameworks */,
+				772DBC901F89A10A0099558C /* ToneAnalyzerV3.framework in Frameworks */,
+				772DBC8F1F89A0FB0099558C /* PersonalityInsightsV3.framework in Frameworks */,
+				772DBC921F89A1230099558C /* NaturalLanguageClassifierV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +61,7 @@
 			children = (
 				772DBC671F89778D0099558C /* Watson-Tomorrow */,
 				772DBC661F89778D0099558C /* Products */,
+				772DBC7A1F897A960099558C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +77,28 @@
 			isa = PBXGroup;
 			children = (
 				772DBC681F89778D0099558C /* AppDelegate.swift */,
-				772DBC6A1F89778D0099558C /* ViewController.swift */,
+				772DBC6A1F89778D0099558C /* TalkVC.swift */,
+				772DBC871F8998D90099558C /* Credentials.swift */,
 				772DBC6C1F89778D0099558C /* Main.storyboard */,
 				772DBC6F1F89778D0099558C /* Assets.xcassets */,
 				772DBC711F89778D0099558C /* LaunchScreen.storyboard */,
 				772DBC741F89778D0099558C /* Info.plist */,
 			);
 			path = "Watson-Tomorrow";
+			sourceTree = "<group>";
+		};
+		772DBC7A1F897A960099558C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				772DBC911F89A1230099558C /* NaturalLanguageClassifierV1.framework */,
+				772DBC851F89970F0099558C /* ToneAnalyzerV3.framework */,
+				772DBC831F897BF20099558C /* ConversationV1.framework */,
+				772DBC811F897AC60099558C /* RestKit.framework */,
+				772DBC7F1F897ABB0099558C /* PersonalityInsightsV3.framework */,
+				772DBC7D1F897AA30099558C /* SpeechToTextV1.framework */,
+				772DBC7B1F897A970099558C /* TextToSpeechV1.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +111,7 @@
 				772DBC611F89778D0099558C /* Sources */,
 				772DBC621F89778D0099558C /* Frameworks */,
 				772DBC631F89778D0099558C /* Resources */,
+				772DBC8B1F89A0420099558C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,13 +169,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		772DBC8B1F89A0420099558C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NaturalLanguageClassifierV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SpeechToTextV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ToneAnalyzerV3.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PersonalityInsightsV3.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		772DBC611F89778D0099558C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772DBC6B1F89778D0099558C /* ViewController.swift in Sources */,
+				772DBC6B1F89778D0099558C /* TalkVC.swift in Sources */,
 				772DBC691F89778D0099558C /* AppDelegate.swift in Sources */,
+				772DBC881F8998D90099558C /* Credentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +337,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GMX3JSSQ7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Watson-Tomorrow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Maklemak.Watson-Tomorrow";
@@ -291,6 +356,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GMX3JSSQ7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Watson-Tomorrow/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Maklemak.Watson-Tomorrow";

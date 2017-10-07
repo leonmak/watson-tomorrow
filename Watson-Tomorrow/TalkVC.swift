@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TalkVC.swift
 //  Watson-Tomorrow
 //
 //  Created by Leon Mak on 7/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TalkVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
