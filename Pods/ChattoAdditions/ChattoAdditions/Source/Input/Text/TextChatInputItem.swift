@@ -77,3 +77,44 @@ extension TextChatInputItem: ChatInputItemProtocol {
         }
     }
 }
+
+open class AudioInputItem {
+    typealias Class = AudioInputItem
+    public var button: UIButton
+    
+    public init(button: UIButton) {
+        self.button = button
+    }
+    
+    open var selected = false {
+        didSet {
+            if selected {
+                button.layer.opacity = 0.5
+            } else {
+                button.layer.opacity = 1
+            }
+        }
+    }
+}
+
+extension AudioInputItem: ChatInputItemProtocol {
+    public var presentationMode: ChatInputItemPresentationMode {
+        return .none
+    }
+    
+    public var showsSendButton: Bool {
+        return false
+    }
+    
+    public var inputView: UIView? {
+        return nil
+    }
+    
+    public var tabView: UIView {
+        return self.button
+    }
+    
+    public func handleInput(_ input: AnyObject) {
+        return
+    }
+}

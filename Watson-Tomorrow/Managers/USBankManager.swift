@@ -79,14 +79,13 @@ class USBankManager {
                           encoding: JSONEncoding.default,
                           headers: Constants.Bank.requestHeaders).validate().responseJSON { response in
             switch response.result {
-            case .success:
-                print(account.productCode)
+            case .success:       
                 guard let value = response.result.value as? [String: Any],
                     let transactionsResponses = value["MonetaryTransactionResponseList"] as? [[String: Any]] else {
                         return
                 }
                 var transactionArr: [Transaction] = []
-                // TODO: Support more account types, and store in a backend
+                // TODO: Support more account types, and store in a persistent backend (requires proper banking API)
                 switch account.productCode {
                 case "DDA":
                     transactionsResponses.forEach { transactionDict in
@@ -107,19 +106,23 @@ class USBankManager {
                 default: break
                 }
                 
+                // Sort by latest first
+                transactionArr.sort(by: { (t1, t2) -> Bool in
+                    t1.date > t2.date
+                })
+                
                 // Upsert into store
                 if self.transactions[account.productCode] != nil {
                     self.transactions[account.productCode]!.append(contentsOf: transactionArr)
                 } else {
                     self.transactions[account.productCode] = transactionArr
                 }
+                
+                print("Loaded account type: " + account.productCode)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-    
-    // MARK: - Analytics
-    
     
 }

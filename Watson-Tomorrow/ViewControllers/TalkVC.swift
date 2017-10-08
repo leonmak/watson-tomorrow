@@ -12,7 +12,7 @@ import Chatto
 import ChattoAdditions
 
 
-class TalkVC: BaseChatViewController {
+class TalkVC: BaseChatViewController, UITabBarDelegate {
 
     @IBOutlet weak var reponseLbl: UILabel!
     @IBOutlet weak var toggleTalkingBtn: UIButton!
@@ -26,43 +26,38 @@ class TalkVC: BaseChatViewController {
         super.viewDidLoad()
         self.chatDataSource = WatsonManager.instance.dataSource
         super.chatItemsDecorator = ChatItemsDemoDecorator()
+        
+        showWelcomePrompt()
+        setupBackBtn()
     }
+    
+    func setupBackBtn() {
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TalkVC.backBtnPressed))
+        self.navigationItem.leftBarButtonItem = newBackButton
+    }
+    
+    @objc func backBtnPressed() {
+        WatsonManager.instance.restartConvo()
+        _ = navigationController?.popViewController(animated: true)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func showWelcomePrompt() {
+        WatsonManager.instance.botInitialWelcome()
+    }
+    
 
-    // MARK: - Speech to Text
-    @IBAction func toggleTalkingBtnPressed(_ sender: Any) {
-        if !WatsonManager.instance.isStreamingSpeech {
-            startRecording()
-        } else {
-            stopRecording()
-        }
-    }
-    
-    func startRecording() {
-        toggleTalkingBtn.setTitle("Send response", for: .normal)
-        
-        WatsonManager.instance.sendSpeech(completion: { results in
-            let transcript = results.bestTranscript
-            self.reponseLbl.text = transcript
-            NSLog(transcript)
-        })
-    }
-    
-    func stopRecording() {
-        toggleTalkingBtn.setTitle("Start Talking", for: .normal)
-        
-        WatsonManager.instance.stopSendingSpeech()
-    }
-    
     // MARK: - Chatto UI
     override func createChatInputView() -> UIView {
         let chatInputView = ChatInputBar.loadNib()
         var appearance = ChatInputBarAppearance()
         appearance.sendButtonAppearance.title = NSLocalizedString("Send", comment: "")
-        appearance.textInputAppearance.placeholderText = NSLocalizedString("Send Emma a message", comment: "")
+        appearance.textInputAppearance.placeholderText = NSLocalizedString("Ask Emma about money", comment: "")
         self.chatInputPresenter = BasicChatInputBarPresenter(
             chatInputBar: chatInputView,
             chatInputItems: self.createChatInputItems(),
@@ -75,8 +70,7 @@ class TalkVC: BaseChatViewController {
     func createChatInputItems() -> [ChatInputItemProtocol] {
         var items = [ChatInputItemProtocol]()
         items.append(self.createTextInputItem())
-        // TODO: Append audio record
-        // items.append(self.createAudioInputItem())
+        items.append(AudioInputItem(button: TalkButton()))
         return items
     }
 
@@ -103,6 +97,7 @@ class TalkVC: BaseChatViewController {
             ]
         ]
     }
+    
 
 }
 

@@ -49,10 +49,10 @@ class WatsonManager {
     func sendReply(_ message: String, completion: (((MessageResponse) -> Void)?)=nil ) {
         NSLog("Sending text: " + message)
         self.dataSource.addTextMessage(message)
-        let request = MessageRequest(text: message)
+        let request = MessageRequest(text: message, context: convoContext)
         self.conversation.message(withWorkspace: Credentials.Watson.Conversation.workspace, request: request) { response in
             DispatchQueue.main.async {
-                self.handleResponse(response)
+                self.botRespond(response)
                 if let handler = completion{
                     handler(response)
                 }
@@ -61,27 +61,63 @@ class WatsonManager {
     }
     
     // MARK: Emma reply
-    func handleResponse(_ response: MessageResponse) {
+    func botRespond(_ response: MessageResponse) {
         NSLog("Received Response: " + response.json.description)
+        
         // TODO: check if ended
         self.convoContext = response.context
-        if let outputText = response.output.text.first {
-            self.dataSource.addTextMessage(outputText, isIncoming: true)
+        if didHandleMultipleResponses() {
+            return
         }
+        
+        response.output.text.forEach { outputText in
+            self.botReplySpeech(outputText)
+        }
+        
+        didHandleAnalytics()
+        
+    }
+    
+    func didHandleAnalytics() {
+        if let apiToCall = self.convoContext?.json["ApiToCall"] as? String {
+            DataManager.instance.getAnalyticsForSavings(fromApi: apiToCall) { insights in
+                insights.forEach {self.botReplySpeech($0)}
+            }
+        }
+    }
+    
+    func didHandleMultipleResponses() -> Bool {
+        if let allResponses = self.convoContext?.json["AllResponses"] as? [String], allResponses.count > 0 {
+            allResponses.forEach { botReplySpeech($0) }
+            return true
+        }
+        return false
+    }
+    func botInitialWelcome() {
+        botReplySpeech(Constants.welcomeMessage)
+    }
+    
+    func botReplySpeech(_ message: String) {
+        self.dataSource.addTextMessage(message, isIncoming: true)
+        speak(text: message)
     }
 
     func restartConvo() {
+        self.dataSource = ChatDataSource()
         self.convoContext = nil
         stopSendingSpeech()
-        // TODO: Clear message view
     }
     
     // MARK: - Text to Speech
     func speak(text: String) {
-        textToSpeech.synthesize(text, success: { data in
-            self.audioPlayer = try! AVAudioPlayer(data: data)
-            self.audioPlayer.play()
-        })
+        textToSpeech.getVoice(SynthesisVoice.es_Laura.rawValue) { voice in
+            let guid = voice.customization?.customizationID
+            self.textToSpeech.synthesize(text, voice: SynthesisVoice.gb_Kate.rawValue, customizationID: guid, success: { data in
+                print("playing", data)
+                self.audioPlayer = try! AVAudioPlayer(data: data)
+                self.audioPlayer.play()
+            })
+        }
     }
 
     private func setupWatson() {
