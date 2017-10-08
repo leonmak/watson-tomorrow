@@ -9,13 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DashboardVC-->
+        <!--ProfileVC-->
         <scene sceneID="ee0-8p-1EX">
             <objects>
-                <viewController id="7kx-A9-eYO" customClass="DashboardVC" customModule="Watson_Tomorrow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7kx-A9-eYO" customClass="ProfileVC" customModule="Watson_Tomorrow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TRQ-sL-3RX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2g-Qo-qKD" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKl-4T-ul8" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-VX-4Zo">
+                                        <rect key="frame" x="101" y="390" width="119" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ez-2o-FyA">
+                                        <rect key="frame" x="60" y="440" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Set Emergency Fund Amount"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="kzH-vm-OVT"/>
                     </view>
@@ -23,23 +49,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Db-NA-pqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="1361"/>
+            <point key="canvasLocation" x="78.75" y="1480.9859154929577"/>
         </scene>
-        <!--ProfileVC-->
+        <!--DashboardVC-->
         <scene sceneID="PNF-RE-tf1">
             <objects>
-                <viewController id="bI5-85-TMm" customClass="ProfileVC" customModule="Watson_Tomorrow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bI5-85-TMm" customClass="DashboardVC" customModule="Watson_Tomorrow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ham-Dz-lDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="930-D4-mdJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3d-Ro-tPp" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wrx-ie-AzA" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="268" width="320" height="236"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="930-D4-mdJ" firstAttribute="trailing" secondItem="Xfr-qQ-idI" secondAttribute="trailing" id="LW5-dN-UID"/>
+                            <constraint firstAttribute="bottom" secondItem="930-D4-mdJ" secondAttribute="bottom" id="Mf6-6h-6WQ"/>
+                            <constraint firstItem="930-D4-mdJ" firstAttribute="top" secondItem="Xfr-qQ-idI" secondAttribute="top" id="eBq-da-LII"/>
+                            <constraint firstItem="930-D4-mdJ" firstAttribute="leading" secondItem="Xfr-qQ-idI" secondAttribute="leading" id="kcg-4L-3zm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xfr-qQ-idI"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="RnG-tK-IQj"/>
+                    <connections>
+                        <outlet property="barChartView" destination="g3d-Ro-tPp" id="rJl-lr-0ro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zA-S2-iMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="1481"/>
+            <point key="canvasLocation" x="-712.5" y="1480.9859154929577"/>
         </scene>
         <!--Chat-->
         <scene sceneID="yNP-IR-qiz">
@@ -80,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgX-WM-FBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="563"/>
+            <point key="canvasLocation" x="1211" y="1328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNu-Wl-vkk">
@@ -114,20 +164,20 @@
                                     <segue destination="79N-If-whK" kind="show" id="a2r-lm-8Jt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FI-TH-uhD">
+                                <rect key="frame" x="138" y="298" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <segue destination="7kx-A9-eYO" kind="show" id="QUh-wa-nKG"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="539-sL-QLn">
-                                <rect key="frame" x="80" y="461" width="116" height="30"/>
+                                <rect key="frame" x="104" y="447" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Emergency Fund"/>
                                 <connections>
                                     <segue destination="bI5-85-TMm" kind="show" id="tHE-Pw-9qh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FI-TH-uhD">
-                                <rect key="frame" x="88" y="307" width="108" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Spending Chart"/>
-                                <connections>
-                                    <segue destination="7kx-A9-eYO" kind="show" id="QUh-wa-nKG"/>
                                 </connections>
                             </button>
                         </subviews>
