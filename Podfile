@@ -9,4 +9,6 @@ target 'Watson-Tomorrow' do
   pod 'Chatto', :git => 'https://github.com/badoo/Chatto', :branch => 'master'
   pod 'ChattoAdditions', :git => 'https://github.com/badoo/Chatto', :branch => 'master'
 
+  pod 'Alamofire', '~> 4.5'
+
 end

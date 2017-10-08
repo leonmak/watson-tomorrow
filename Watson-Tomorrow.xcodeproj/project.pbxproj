@@ -29,6 +29,14 @@
 		772DBCAF1F89FEB30099558C /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCAE1F89FEB30099558C /* ChatDataSource.swift */; };
 		772DBCB21F8A01920099558C /* WatsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCB11F8A01920099558C /* WatsonManager.swift */; };
 		772DBCB41F8A24AB0099558C /* ChatItemDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCB31F8A24AB0099558C /* ChatItemDecorator.swift */; };
+		772DBCB61F8A2F740099558C /* USBankManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCB51F8A2F740099558C /* USBankManager.swift */; };
+		772DBCC11F8A31590099558C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCC01F8A31590099558C /* DataManager.swift */; };
+		772DBCC31F8A33B10099558C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCC21F8A33B10099558C /* Constants.swift */; };
+		772DBCC51F8A388E0099558C /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCC41F8A388E0099558C /* BankAccount.swift */; };
+		772DBCCA1F8A4A830099558C /* mcc_codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 772DBCC81F8A47560099558C /* mcc_codes.json */; };
+		772DBCCC1F8A4CB20099558C /* MerchantCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCCB1F8A4CB20099558C /* MerchantCode.swift */; };
+		772DBCCE1F8A507F0099558C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCCD1F8A507F0099558C /* Transaction.swift */; };
+		772DBCD01F8A53610099558C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCCF1F8A53610099558C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +57,6 @@
 		772DBC871F8998D90099558C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		772DBC911F89A1230099558C /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
 		772DBC941F89A6AE0099558C /* ReplyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyLabel.swift; sourceTree = "<group>"; };
-		772DBCA41F89F5220099558C /* mcc_codes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mcc_codes.json; sourceTree = "<group>"; };
 		772DBCA51F89F7000099558C /* TextMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessages.swift; sourceTree = "<group>"; };
 		772DBCA81F89F8390099558C /* ChatProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProtocols.swift; sourceTree = "<group>"; };
 		772DBCAA1F89FB470099558C /* TextHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHandler.swift; sourceTree = "<group>"; };
@@ -57,6 +64,14 @@
 		772DBCAE1F89FEB30099558C /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
 		772DBCB11F8A01920099558C /* WatsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatsonManager.swift; sourceTree = "<group>"; };
 		772DBCB31F8A24AB0099558C /* ChatItemDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemDecorator.swift; sourceTree = "<group>"; };
+		772DBCB51F8A2F740099558C /* USBankManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBankManager.swift; sourceTree = "<group>"; };
+		772DBCC01F8A31590099558C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		772DBCC21F8A33B10099558C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		772DBCC41F8A388E0099558C /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		772DBCC81F8A47560099558C /* mcc_codes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mcc_codes.json; sourceTree = "<group>"; };
+		772DBCCB1F8A4CB20099558C /* MerchantCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantCode.swift; sourceTree = "<group>"; };
+		772DBCCD1F8A507F0099558C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		772DBCCF1F8A53610099558C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9E863BC36D969182F905BFE7 /* Pods_Watson_Tomorrow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watson_Tomorrow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A75764C15EFFDAF1E08718 /* Pods-Watson-Tomorrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watson-Tomorrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +116,7 @@
 		772DBC671F89778D0099558C /* Watson-Tomorrow */ = {
 			isa = PBXGroup;
 			children = (
-				772DBCB01F8A01890099558C /* Watson */,
+				772DBCB01F8A01890099558C /* Managers */,
 				772DBC931F89A6940099558C /* View */,
 				772DBCA71F89F7130099558C /* Chatto */,
 				772DBC6A1F89778D0099558C /* TalkVC.swift */,
@@ -110,8 +125,11 @@
 				772DBC6C1F89778D0099558C /* Main.storyboard */,
 				772DBC6F1F89778D0099558C /* Assets.xcassets */,
 				772DBC711F89778D0099558C /* LaunchScreen.storyboard */,
-				772DBCA41F89F5220099558C /* mcc_codes.json */,
 				772DBC741F89778D0099558C /* Info.plist */,
+				772DBCC81F8A47560099558C /* mcc_codes.json */,
+				772DBCBD1F8A30020099558C /* Model */,
+				772DBCC21F8A33B10099558C /* Constants.swift */,
+				772DBCCF1F8A53610099558C /* Extensions.swift */,
 			);
 			path = "Watson-Tomorrow";
 			sourceTree = "<group>";
@@ -152,12 +170,24 @@
 			path = Chatto;
 			sourceTree = "<group>";
 		};
-		772DBCB01F8A01890099558C /* Watson */ = {
+		772DBCB01F8A01890099558C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				772DBCB11F8A01920099558C /* WatsonManager.swift */,
+				772DBCC01F8A31590099558C /* DataManager.swift */,
+				772DBCB51F8A2F740099558C /* USBankManager.swift */,
 			);
-			path = Watson;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		772DBCBD1F8A30020099558C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				772DBCC41F8A388E0099558C /* BankAccount.swift */,
+				772DBCCB1F8A4CB20099558C /* MerchantCode.swift */,
+				772DBCCD1F8A507F0099558C /* Transaction.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9CB0DE90ACAC8C4E315EFC36 /* Pods */ = {
@@ -232,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772DBCCA1F8A4A830099558C /* mcc_codes.json in Resources */,
 				772DBC731F89778D0099558C /* LaunchScreen.storyboard in Resources */,
 				772DBC701F89778D0099558C /* Assets.xcassets in Resources */,
 				772DBC6E1F89778D0099558C /* Main.storyboard in Resources */,
@@ -243,16 +274,18 @@
 /* Begin PBXShellScriptBuildPhase section */
 		735185D4CC3CD754E921AC59 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
 			);
@@ -274,8 +307,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ToneAnalyzerV3.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PersonalityInsightsV3.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Chatto.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ChattoAdditions.framework",
 			);
 			outputPaths = (
 			);
@@ -324,14 +355,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				772DBC6B1F89778D0099558C /* TalkVC.swift in Sources */,
+				772DBCD01F8A53610099558C /* Extensions.swift in Sources */,
 				772DBCAF1F89FEB30099558C /* ChatDataSource.swift in Sources */,
 				772DBCAD1F89FC180099558C /* ChatCellStyle.swift in Sources */,
 				772DBCA91F89F8390099558C /* ChatProtocols.swift in Sources */,
 				772DBC691F89778D0099558C /* AppDelegate.swift in Sources */,
+				772DBCC11F8A31590099558C /* DataManager.swift in Sources */,
+				772DBCCE1F8A507F0099558C /* Transaction.swift in Sources */,
 				772DBCB41F8A24AB0099558C /* ChatItemDecorator.swift in Sources */,
+				772DBCC51F8A388E0099558C /* BankAccount.swift in Sources */,
 				772DBCB21F8A01920099558C /* WatsonManager.swift in Sources */,
 				772DBCA61F89F7000099558C /* TextMessages.swift in Sources */,
+				772DBCCC1F8A4CB20099558C /* MerchantCode.swift in Sources */,
 				772DBC881F8998D90099558C /* Credentials.swift in Sources */,
+				772DBCB61F8A2F740099558C /* USBankManager.swift in Sources */,
+				772DBCC31F8A33B10099558C /* Constants.swift in Sources */,
 				772DBC951F89A6AE0099558C /* ReplyLabel.swift in Sources */,
 				772DBCAB1F89FB470099558C /* TextHandler.swift in Sources */,
 			);
