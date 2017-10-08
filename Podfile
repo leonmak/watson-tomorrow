@@ -12,5 +12,4 @@ target 'Watson-Tomorrow' do
   pod 'Alamofire', '~> 4.5'
 
   pod 'Charts'
-  pod 'ChartsRealm'
 end

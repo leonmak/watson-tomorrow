@@ -115,7 +115,7 @@ class LiveCameraCaptureSession: LiveCameraCaptureSessionProtocol {
     private func removeInputDevices() {
         assert(!Thread.isMainThread, "This can be very slow, make sure it happens in a background thread")
         self.captureSession?.inputs.forEach { (input) in
-            self.captureSession?.removeInput(input as! AVCaptureInput)
+            self.captureSession?.removeInput(input )
         }
     }
 }
