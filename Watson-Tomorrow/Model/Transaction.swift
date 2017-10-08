@@ -10,18 +10,37 @@ import Foundation
 
 class Transaction {
     var amount: Double
-    var description: String
-    var category: String
     var date: Date
     
-    init?(dict: [String: String]) {
-        self.amount = Double(dict["PostedAmount"]!)!
-        self.description = dict["TransactionDescription"]!
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        self.date = dateFormatter.date(from: dict["PostedDate"]!)!
-        var mcc = dict["StandardIndustryCode"]!
-        mcc.remove(at: mcc.startIndex)
-        self.category = mcc
+    init?(dict: [String: Any]) {
+        self.amount = Double(dict["PostedAmount"] as! String)!
+        Constants.Bank.dateFormatter.dateFormat = Constants.Bank.dateFormat
+        self.date = Constants.Bank.dateFormatter.date(from: dict["PostedDate"] as! String)!
+        
     }
+}
+
+class TransactionCCD: Transaction {
+    var description: String
+    var categoryCode: String
+
+    override init?(dict: [String: Any]) {
+        self.description = dict["TransactionDescription"] as! String
+        var mcc = dict["StandardIndustryCode"] as! String
+        mcc.remove(at: mcc.startIndex)
+        self.categoryCode = mcc
+        super.init(dict: dict)
+    }
+}
+
+class TransactionDDA: Transaction {
+    var takeInOrOut: String
+    var balanceLeft: Double
+    
+    override init?(dict: [String: Any]) {
+        self.takeInOrOut = dict["TransactionLevelCode"] as! String
+        self.balanceLeft = Double(dict["AfterPostingCurrentBalanceAmount"] as! String)!
+        super.init(dict: dict)
+    }
+
 }

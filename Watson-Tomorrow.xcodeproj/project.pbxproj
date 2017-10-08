@@ -119,6 +119,7 @@
 				772DBCB01F8A01890099558C /* Managers */,
 				772DBC931F89A6940099558C /* View */,
 				772DBCA71F89F7130099558C /* Chatto */,
+				772DBCBD1F8A30020099558C /* Model */,
 				772DBC6A1F89778D0099558C /* TalkVC.swift */,
 				772DBC871F8998D90099558C /* Credentials.swift */,
 				772DBC681F89778D0099558C /* AppDelegate.swift */,
@@ -127,7 +128,6 @@
 				772DBC711F89778D0099558C /* LaunchScreen.storyboard */,
 				772DBC741F89778D0099558C /* Info.plist */,
 				772DBCC81F8A47560099558C /* mcc_codes.json */,
-				772DBCBD1F8A30020099558C /* Model */,
 				772DBCC21F8A33B10099558C /* Constants.swift */,
 				772DBCCF1F8A53610099558C /* Extensions.swift */,
 			);

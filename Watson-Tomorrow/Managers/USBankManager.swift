@@ -11,9 +11,9 @@ import Alamofire
 
 class USBankManager {
     static let instance = USBankManager()
-    var merchantCodes: [MerchantCode] = []
-    var bankAccounts: [BankAccount] = []
-    var transactions: [Transaction] = []
+    var merchantCodes: [String: MerchantCode] = [:]     // Key - 4 digit code
+    var openBankAccounts: [String: BankAccount] = [:]   // Key - pdtCode
+    var transactions: [String: [Transaction]] = [:]     // Key - pdtCode
     
     private init () {
     }
@@ -24,13 +24,16 @@ class USBankManager {
     }
     
     func loadMccCodes() {
-        DataManager.instance.getMccJsonFromURL(Constants.MccCodeFileName) { (merchantCodes, error) in
+        DataManager.instance.getMccJsonFromURL(Constants.MccCodeFileName) { (mccs, error) in
             if error != nil {
                 NSLog(error.debugDescription)
                 return
             }
-            if let mcc = merchantCodes {
-                self.merchantCodes = mcc
+            guard let mccs = mccs else {
+                return
+            }
+            mccs.forEach { merchantCode in
+                self.merchantCodes[merchantCode.mcc] = merchantCode
             }
         }
     }
@@ -49,22 +52,20 @@ class USBankManager {
                     let accounts = value["AccessibleAccountDetailList"] as? [[String: Any]] else {
                         return
                 }
-                accounts.forEach({ (accountDict) in
-                    let companyId = accountDict["OperatingCompanyIdentifier"] as! String
-                    let productCode = accountDict["ProductCode"] as! String
-                    let primaryId = accountDict["PrimaryIdentifier"] as! String
-                    let bankAccount = BankAccount(companyId: companyId, productCode: productCode, primaryId: primaryId)
-                    if bankAccount.productCode !=  "CCD" {
-                        return
+                accounts.forEach({ accountDict in
+                    let bankAccount = BankAccount(accountDict: accountDict)
+                    if bankAccount.isOpen {
+                        self.openBankAccounts[bankAccount.productCode] = bankAccount
                     }
-                    self.bankAccounts.append(bankAccount)
                 })
-                guard self.bankAccounts.count > 0 else {
-                    print("No credit card accounts detected")
+                guard self.openBankAccounts.values.count > 0 else {
+                    print("No bank accounts detected")
                     return
                 }
                 print("Loaded User accounts Successful")
-                self.loadTransactions(account: self.bankAccounts.first!)
+                self.openBankAccounts.values.forEach { account in
+                    self.loadTransactions(account: account)
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -79,25 +80,46 @@ class USBankManager {
                           headers: Constants.Bank.requestHeaders).validate().responseJSON { response in
             switch response.result {
             case .success:
+                print(account.productCode)
                 guard let value = response.result.value as? [String: Any],
-                    let transactionsResponses = value["MonetaryTransactionResponseList"] as? [[String: String]] else {
+                    let transactionsResponses = value["MonetaryTransactionResponseList"] as? [[String: Any]] else {
                         return
                 }
-                transactionsResponses.forEach {transactionDict in
-                    guard let transaction = Transaction(dict: transactionDict) else {
-                        print("Invalid dictionary", transactionDict)
-                        return
+                var transactionArr: [Transaction] = []
+                // TODO: Support more account types, and store in a backend
+                switch account.productCode {
+                case "DDA":
+                    transactionsResponses.forEach { transactionDict in
+                        guard let transaction = TransactionDDA(dict: transactionDict) else {
+                            print("Invalid dictionary", transactionDict)
+                            return
+                        }
+                        transactionArr.append(transaction)
                     }
-                    self.transactions.append(transaction)
+                case "CCD":
+                    transactionsResponses.forEach { transactionDict in
+                        guard let transaction = TransactionCCD(dict: transactionDict) else {
+                            print("Invalid dictionary", transactionDict)
+                            return
+                        }
+                        transactionArr.append(transaction)
+                    }
+                default: break
                 }
-                print(self.transactions)
+                
+                // Upsert into store
+                if self.transactions[account.productCode] != nil {
+                    self.transactions[account.productCode]!.append(contentsOf: transactionArr)
+                } else {
+                    self.transactions[account.productCode] = transactionArr
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
     
-    
+    // MARK: - Analytics
     
     
 }

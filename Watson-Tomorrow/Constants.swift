@@ -23,6 +23,9 @@ struct Constants {
             "Accept": "application/json",
             "Content-Type": "application/json"
         ]
+        
+        static let dateFormatter = DateFormatter()
+        static let dateFormat = "yyyy-MM-dd"
 
         static let userAccountsEndpoint = "https://api119525live.gateway.akana.com:443/user/accounts"
         static let transactionEndpoint = "https://api119622live.gateway.akana.com:443/account/transactions"
