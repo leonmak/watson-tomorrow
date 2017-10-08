@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 
-class ProfileVC: UIViewController, ChartViewDelegate {
+class DashboardVC: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var barChartViewSavings: BarChartView!
     @IBOutlet weak var barChartViewSpendings: BarChartView!

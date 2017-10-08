@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 
-class DashboardVC: UIViewController {
+class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

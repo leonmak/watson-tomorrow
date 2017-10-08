@@ -85,6 +85,8 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="RnG-tK-IQj"/>
                     <connections>
                         <outlet property="barChartView" destination="g3d-Ro-tPp" id="rJl-lr-0ro"/>
+                        <outlet property="barChartViewSavings" destination="g3d-Ro-tPp" id="Lsu-fw-2tf"/>
+                        <outlet property="barChartViewSpendings" destination="Wrx-ie-AzA" id="EQp-2z-ss4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zA-S2-iMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
