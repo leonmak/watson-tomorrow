@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D6BD3CC5E187951D6873E9 /* Pods_Watson_Tomorrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E863BC36D969182F905BFE7 /* Pods_Watson_Tomorrow.framework */; };
 		772DBC691F89778D0099558C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC681F89778D0099558C /* AppDelegate.swift */; };
 		772DBC6B1F89778D0099558C /* TalkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC6A1F89778D0099558C /* TalkVC.swift */; };
 		772DBC6E1F89778D0099558C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772DBC6C1F89778D0099558C /* Main.storyboard */; };
@@ -20,9 +21,18 @@
 		772DBC901F89A10A0099558C /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC851F89970F0099558C /* ToneAnalyzerV3.framework */; };
 		772DBC921F89A1230099558C /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC911F89A1230099558C /* NaturalLanguageClassifierV1.framework */; };
 		772DBC951F89A6AE0099558C /* ReplyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBC941F89A6AE0099558C /* ReplyLabel.swift */; };
+		772DBC9B1F89F1E20099558C /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772DBC831F897BF20099558C /* ConversationV1.framework */; };
+		772DBCA61F89F7000099558C /* TextMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCA51F89F7000099558C /* TextMessages.swift */; };
+		772DBCA91F89F8390099558C /* ChatProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCA81F89F8390099558C /* ChatProtocols.swift */; };
+		772DBCAB1F89FB470099558C /* TextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCAA1F89FB470099558C /* TextHandler.swift */; };
+		772DBCAD1F89FC180099558C /* ChatCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCAC1F89FC180099558C /* ChatCellStyle.swift */; };
+		772DBCAF1F89FEB30099558C /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCAE1F89FEB30099558C /* ChatDataSource.swift */; };
+		772DBCB21F8A01920099558C /* WatsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCB11F8A01920099558C /* WatsonManager.swift */; };
+		772DBCB41F8A24AB0099558C /* ChatItemDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772DBCB31F8A24AB0099558C /* ChatItemDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CFFB18BC1E12E8D52150AEE /* Pods-Watson-Tomorrow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watson-Tomorrow.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow.release.xcconfig"; sourceTree = "<group>"; };
 		772DBC651F89778D0099558C /* Watson-Tomorrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watson-Tomorrow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		772DBC681F89778D0099558C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772DBC6A1F89778D0099558C /* TalkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkVC.swift; sourceTree = "<group>"; };
@@ -39,6 +49,16 @@
 		772DBC871F8998D90099558C /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		772DBC911F89A1230099558C /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NaturalLanguageClassifierV1.framework; path = Carthage/Build/iOS/NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
 		772DBC941F89A6AE0099558C /* ReplyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyLabel.swift; sourceTree = "<group>"; };
+		772DBCA41F89F5220099558C /* mcc_codes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mcc_codes.json; sourceTree = "<group>"; };
+		772DBCA51F89F7000099558C /* TextMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessages.swift; sourceTree = "<group>"; };
+		772DBCA81F89F8390099558C /* ChatProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProtocols.swift; sourceTree = "<group>"; };
+		772DBCAA1F89FB470099558C /* TextHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHandler.swift; sourceTree = "<group>"; };
+		772DBCAC1F89FC180099558C /* ChatCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellStyle.swift; sourceTree = "<group>"; };
+		772DBCAE1F89FEB30099558C /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		772DBCB11F8A01920099558C /* WatsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatsonManager.swift; sourceTree = "<group>"; };
+		772DBCB31F8A24AB0099558C /* ChatItemDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemDecorator.swift; sourceTree = "<group>"; };
+		9E863BC36D969182F905BFE7 /* Pods_Watson_Tomorrow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watson_Tomorrow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9A75764C15EFFDAF1E08718 /* Pods-Watson-Tomorrow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watson-Tomorrow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +66,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772DBC9B1F89F1E20099558C /* ConversationV1.framework in Frameworks */,
 				772DBC8C1F89A0E70099558C /* RestKit.framework in Frameworks */,
 				772DBC8D1F89A0F20099558C /* TextToSpeechV1.framework in Frameworks */,
 				772DBC8E1F89A0F50099558C /* SpeechToTextV1.framework in Frameworks */,
 				772DBC901F89A10A0099558C /* ToneAnalyzerV3.framework in Frameworks */,
 				772DBC8F1F89A0FB0099558C /* PersonalityInsightsV3.framework in Frameworks */,
 				772DBC921F89A1230099558C /* NaturalLanguageClassifierV1.framework in Frameworks */,
+				05D6BD3CC5E187951D6873E9 /* Pods_Watson_Tomorrow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +86,7 @@
 				772DBC671F89778D0099558C /* Watson-Tomorrow */,
 				772DBC661F89778D0099558C /* Products */,
 				772DBC7A1F897A960099558C /* Frameworks */,
+				9CB0DE90ACAC8C4E315EFC36 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,13 +101,16 @@
 		772DBC671F89778D0099558C /* Watson-Tomorrow */ = {
 			isa = PBXGroup;
 			children = (
+				772DBCB01F8A01890099558C /* Watson */,
 				772DBC931F89A6940099558C /* View */,
-				772DBC681F89778D0099558C /* AppDelegate.swift */,
+				772DBCA71F89F7130099558C /* Chatto */,
 				772DBC6A1F89778D0099558C /* TalkVC.swift */,
 				772DBC871F8998D90099558C /* Credentials.swift */,
+				772DBC681F89778D0099558C /* AppDelegate.swift */,
 				772DBC6C1F89778D0099558C /* Main.storyboard */,
 				772DBC6F1F89778D0099558C /* Assets.xcassets */,
 				772DBC711F89778D0099558C /* LaunchScreen.storyboard */,
+				772DBCA41F89F5220099558C /* mcc_codes.json */,
 				772DBC741F89778D0099558C /* Info.plist */,
 			);
 			path = "Watson-Tomorrow";
@@ -100,6 +126,7 @@
 				772DBC7F1F897ABB0099558C /* PersonalityInsightsV3.framework */,
 				772DBC7D1F897AA30099558C /* SpeechToTextV1.framework */,
 				772DBC7B1F897A970099558C /* TextToSpeechV1.framework */,
+				9E863BC36D969182F905BFE7 /* Pods_Watson_Tomorrow.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +139,36 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		772DBCA71F89F7130099558C /* Chatto */ = {
+			isa = PBXGroup;
+			children = (
+				772DBCAA1F89FB470099558C /* TextHandler.swift */,
+				772DBCA51F89F7000099558C /* TextMessages.swift */,
+				772DBCAC1F89FC180099558C /* ChatCellStyle.swift */,
+				772DBCA81F89F8390099558C /* ChatProtocols.swift */,
+				772DBCAE1F89FEB30099558C /* ChatDataSource.swift */,
+				772DBCB31F8A24AB0099558C /* ChatItemDecorator.swift */,
+			);
+			path = Chatto;
+			sourceTree = "<group>";
+		};
+		772DBCB01F8A01890099558C /* Watson */ = {
+			isa = PBXGroup;
+			children = (
+				772DBCB11F8A01920099558C /* WatsonManager.swift */,
+			);
+			path = Watson;
+			sourceTree = "<group>";
+		};
+		9CB0DE90ACAC8C4E315EFC36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9A75764C15EFFDAF1E08718 /* Pods-Watson-Tomorrow.debug.xcconfig */,
+				3CFFB18BC1E12E8D52150AEE /* Pods-Watson-Tomorrow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,10 +176,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 772DBC771F89778D0099558C /* Build configuration list for PBXNativeTarget "Watson-Tomorrow" */;
 			buildPhases = (
+				DB1B51D29F5098C0FCE1F46C /* [CP] Check Pods Manifest.lock */,
 				772DBC611F89778D0099558C /* Sources */,
 				772DBC621F89778D0099558C /* Frameworks */,
 				772DBC631F89778D0099558C /* Resources */,
 				772DBC8B1F89A0420099558C /* ShellScript */,
+				735185D4CC3CD754E921AC59 /* [CP] Embed Pods Frameworks */,
+				86EB3A1B8DECC02D43FA5A71 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +241,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		735185D4CC3CD754E921AC59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
+				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		772DBC8B1F89A0420099558C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,12 +273,48 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ToneAnalyzerV3.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PersonalityInsightsV3.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ConversationV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Chatto.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ChattoAdditions.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		86EB3A1B8DECC02D43FA5A71 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watson-Tomorrow/Pods-Watson-Tomorrow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB1B51D29F5098C0FCE1F46C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Watson-Tomorrow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -208,9 +324,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				772DBC6B1F89778D0099558C /* TalkVC.swift in Sources */,
+				772DBCAF1F89FEB30099558C /* ChatDataSource.swift in Sources */,
+				772DBCAD1F89FC180099558C /* ChatCellStyle.swift in Sources */,
+				772DBCA91F89F8390099558C /* ChatProtocols.swift in Sources */,
 				772DBC691F89778D0099558C /* AppDelegate.swift in Sources */,
+				772DBCB41F8A24AB0099558C /* ChatItemDecorator.swift in Sources */,
+				772DBCB21F8A01920099558C /* WatsonManager.swift in Sources */,
+				772DBCA61F89F7000099558C /* TextMessages.swift in Sources */,
 				772DBC881F8998D90099558C /* Credentials.swift in Sources */,
 				772DBC951F89A6AE0099558C /* ReplyLabel.swift in Sources */,
+				772DBCAB1F89FB470099558C /* TextHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +468,9 @@
 		};
 		772DBC781F89778D0099558C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9A75764C15EFFDAF1E08718 /* Pods-Watson-Tomorrow.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GMX3JSSQ7;
@@ -364,7 +489,9 @@
 		};
 		772DBC791F89778D0099558C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CFFB18BC1E12E8D52150AEE /* Pods-Watson-Tomorrow.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GMX3JSSQ7;

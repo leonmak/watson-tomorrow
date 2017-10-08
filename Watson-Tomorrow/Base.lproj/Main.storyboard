@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dashboard-->
+        <!--View Controller-->
         <scene sceneID="ee0-8p-1EX">
             <objects>
                 <viewController id="7kx-A9-eYO" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="kzH-vm-OVT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="KzT-7A-J2d"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="KzT-7A-J2d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Db-NA-pqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-372" y="1531"/>
         </scene>
-        <!--Account-->
+        <!--View Controller-->
         <scene sceneID="PNF-RE-tf1">
             <objects>
                 <viewController id="bI5-85-TMm" sceneMemberID="viewController">
@@ -35,13 +35,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Xfr-qQ-idI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="RnG-tK-IQj"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="RnG-tK-IQj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zA-S2-iMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="298" y="1531"/>
         </scene>
-        <!--Talk-->
+        <!--TalkVC-->
         <scene sceneID="yNP-IR-qiz">
             <objects>
                 <viewController id="79N-If-whK" customClass="TalkVC" customModule="Watson_Tomorrow" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ynH-Or-ZrZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Talk" id="8pv-Io-BcL"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="8pv-Io-BcL"/>
                     <connections>
                         <outlet property="reponseLbl" destination="nz6-lj-KBA" id="xbw-zz-2EI"/>
                         <outlet property="toggleTalkingBtn" destination="g69-kq-Jxj" id="6pk-O6-nCX"/>

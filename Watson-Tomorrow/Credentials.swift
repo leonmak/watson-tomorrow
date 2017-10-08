@@ -17,6 +17,8 @@ struct Credentials {
         struct Conversation {
             static let username = "fed9c1ad-f158-4882-829c-a1f184659b40"
             static let password = "EOjvPUmpBktf"
+            static let workspace = "5d40f439-e109-4cf1-a27b-fadb498552cf"
+            static let version = "2016-12-23"
         }
         struct Personality {
             static let username = "612f3234-8575-4052-b7de-9467e1aab672"

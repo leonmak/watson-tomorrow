@@ -7,50 +7,34 @@
 //
 
 import UIKit
-import SpeechToTextV1
-import TextToSpeechV1
-import AVFoundation
 
-class TalkVC: UIViewController {
+import Chatto
+import ChattoAdditions
+
+
+class TalkVC: BaseChatViewController {
 
     @IBOutlet weak var reponseLbl: UILabel!
     @IBOutlet weak var toggleTalkingBtn: UIButton!
-    
-    var speechToText: SpeechToText!
-    var speechToTextSession: SpeechToTextSession!
-    var isStreamingSpeech = false
-    
-    var textToSpeech: TextToSpeech!
-    var audioPlayer: AVAudioPlayer!
-    
+
+    var chatInputPresenter: BasicChatInputBarPresenter!
+    lazy private var baseMessageHandler: BaseMessageHandler = {
+        return BaseMessageHandler()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupWatson()
-        
+        self.chatDataSource = WatsonManager.instance.dataSource
+        super.chatItemsDecorator = ChatItemsDemoDecorator()
     }
 
-    func setupWatson() {
-        self.speechToText = SpeechToText(
-            username: Credentials.Watson.SpeechToText.username,
-            password: Credentials.Watson.SpeechToText.password
-        )
-        self.speechToTextSession = SpeechToTextSession(
-            username: Credentials.Watson.SpeechToText.username,
-            password: Credentials.Watson.SpeechToText.password
-        )
-        self.textToSpeech = TextToSpeech(
-            username: Credentials.Watson.TextToSpeech.username,
-            password: Credentials.Watson.TextToSpeech.password
-        )
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
     // MARK: - Speech to Text
     @IBAction func toggleTalkingBtnPressed(_ sender: Any) {
-        if !isStreamingSpeech {
+        if !WatsonManager.instance.isStreamingSpeech {
             startRecording()
         } else {
             stopRecording()
@@ -59,32 +43,66 @@ class TalkVC: UIViewController {
     
     func startRecording() {
         toggleTalkingBtn.setTitle("Send response", for: .normal)
-        isStreamingSpeech = true
         
-        var settings = RecognitionSettings(contentType: .opus)
-        settings.interimResults = true
-        
-        speechToText.recognizeMicrophone(settings: settings, failure: { NSLog($0.localizedDescription) }) { results in
+        WatsonManager.instance.sendSpeech(completion: { results in
             let transcript = results.bestTranscript
             self.reponseLbl.text = transcript
             NSLog(transcript)
-        }
+        })
     }
     
     func stopRecording() {
         toggleTalkingBtn.setTitle("Start Talking", for: .normal)
-        isStreamingSpeech = false
         
-        speechToText.stopRecognizeMicrophone()
+        WatsonManager.instance.stopSendingSpeech()
     }
     
-    // MARK: - Text to Speech
-    func speak(text: String) {
-        textToSpeech.synthesize(text, success: { data in
-            self.audioPlayer = try! AVAudioPlayer(data: data)
-            self.audioPlayer.play()
-        })
+    // MARK: - Chatto UI
+    override func createChatInputView() -> UIView {
+        let chatInputView = ChatInputBar.loadNib()
+        var appearance = ChatInputBarAppearance()
+        appearance.sendButtonAppearance.title = NSLocalizedString("Send", comment: "")
+        appearance.textInputAppearance.placeholderText = NSLocalizedString("Send Emma a message", comment: "")
+        self.chatInputPresenter = BasicChatInputBarPresenter(
+            chatInputBar: chatInputView,
+            chatInputItems: self.createChatInputItems(),
+            chatInputBarAppearance: appearance
+        )
+        chatInputView.maxCharactersCount = 1000
+        return chatInputView
     }
-    
+
+    func createChatInputItems() -> [ChatInputItemProtocol] {
+        var items = [ChatInputItemProtocol]()
+        items.append(self.createTextInputItem())
+        // TODO: Append audio record
+        // items.append(self.createAudioInputItem())
+        return items
+    }
+
+
+    private func createTextInputItem() -> TextChatInputItem {
+        let item = TextChatInputItem()
+        item.textInputHandler = { text in
+            WatsonManager.instance.sendReply(text)
+        }
+        return item
+    }
+
+    // MARK: Chatto Presenters
+    override func createPresenterBuilders() -> [ChatItemType: [ChatItemPresenterBuilderProtocol]] {
+        let textMessagePresenter = TextMessagePresenterBuilder(
+            viewModelBuilder: DemoTextMessageViewModelBuilder(),
+            interactionHandler: DemoTextMessageHandler(baseHandler: self.baseMessageHandler)
+        )
+        textMessagePresenter.baseMessageStyle = BaseMessageCollectionViewCellDefaultStyle()
+
+        return [
+            DemoTextMessageModel.chatItemType: [
+                textMessagePresenter
+            ]
+        ]
+    }
+
 }
 
